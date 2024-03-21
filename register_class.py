@@ -83,8 +83,10 @@ class Register:
             if username=="0":   # if user wants to go back
                 return
             if len(username)>1:
+                # Convert username to lowercase for case-insensitive comparison
+                username_lower = username.lower()
                 for line in self.accounts_list:
-                    if username in line.keys():   # checking if the username is already taken
+                    if username_lower in line.keys():   # checking if the username is already taken
                         print("sorry,username is already taken.")
                         print()
                         break
